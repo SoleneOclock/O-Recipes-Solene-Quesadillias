@@ -7,12 +7,16 @@ import IRecipe from '../@types/recipe';
 import { Route, Routes } from 'react-router-dom';
 import RecipePage from './RecipePage/RecipePage';
 import myAxiosInstance from '../axios/axios';
+import FavoritesPage from './HomePage/FavoritesPage';
 
 function App() {
 	// STATE qui stocke les recettes : au debut un tableau vide et après le fetch on a les recettes
 	// - on les passe via une prop à HomePage pour qu'il affiche ses card
 	// - et aussi à Nav pour qu'il affiche ses liens
 	const [recipes, setRecipes] = useState<IRecipe[]>([]);
+
+	// STATE qui stocke si le user est connecté
+	const [isLogged, setIsLogged] = useState(false);
 
 	useEffect(() => {
 		const fetchRecipes = async () => {
@@ -35,7 +39,7 @@ function App() {
 				<Nav recipes={recipes} />
 			</div>
 			<div className="App-right">
-				<Header />
+				<Header setIsLogged={setIsLogged} />
 
 				<Routes>
 					<Route path="/" element={<HomePage recipes={recipes} />} />
@@ -43,6 +47,8 @@ function App() {
 						path="/recipe/:slug"
 						element={<RecipePage recipes={recipes} />}
 					/>
+					{isLogged && <Route path="/favorites" element={<FavoritesPage />} />}
+					<Route path="*" element={<p>404</p>} />
 				</Routes>
 			</div>
 		</div>
