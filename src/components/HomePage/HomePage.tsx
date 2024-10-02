@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import IRecipe from '../../@types/recipe';
 import './HomePage.scss';
 import { Card, CardGroup, Button } from 'semantic-ui-react';
@@ -18,7 +19,11 @@ export default function HomePage({ recipes }: IHomePageProps) {
 						image={recipe.thumbnail}
 						header={recipe.title}
 						meta={`Difficulty: ${recipe.difficulty}`}
-						description={<Button>Voir la recette</Button>}
+						description={
+							<Button as={Link} to={`/recipe/${recipe.slug}`}>
+								Voir la recette
+							</Button>
+						}
 					/>
 				))}
 			</CardGroup>

@@ -1,4 +1,4 @@
-import { StrictMode } from 'react';
+import { BrowserRouter } from 'react-router-dom';
 import { createRoot } from 'react-dom/client';
 import App from './components/App.tsx';
 
@@ -8,7 +8,7 @@ import 'semantic-ui-css/semantic.min.css';
 import './index.scss';
 
 createRoot(document.getElementById('root')!).render(
-	<StrictMode>
+	<BrowserRouter>
 		<App />
-	</StrictMode>,
+	</BrowserRouter>,
 );

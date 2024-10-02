@@ -6,6 +6,8 @@ import Header from './Header/Header';
 import HomePage from './HomePage/HomePage';
 import Nav from './Nav/Nav';
 import IRecipe from '../@types/recipe';
+import { Route, Routes } from 'react-router-dom';
+import RecipePage from './RecipePage/RecipePage';
 
 function App() {
 	// STATE qui stocke les recettes : au debut un tableau vide et après le fetch on a les recettes
@@ -36,7 +38,14 @@ function App() {
 			</div>
 			<div className="App-right">
 				<Header />
-				<HomePage recipes={recipes} />
+
+				<Routes>
+					<Route path="/" element={<HomePage recipes={recipes} />} />
+					<Route
+						path="/recipe/:slug"
+						element={<RecipePage recipes={recipes} />}
+					/>
+				</Routes>
 			</div>
 		</div>
 	);
