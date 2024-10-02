@@ -1,0 +1,10 @@
+@use '../../assets/variables';
+
+.Main {
+	padding: 1rem;
+
+	&-title {
+		color: variables.$main-color;
+		border-bottom: 1px solid variables.$main-color;
+	}
+}
