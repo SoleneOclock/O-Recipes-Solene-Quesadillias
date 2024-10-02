@@ -1,5 +1,3 @@
-import axios from 'axios';
-
 import { useEffect, useState } from 'react';
 import './App.scss';
 import Header from './Header/Header';
@@ -8,6 +6,7 @@ import Nav from './Nav/Nav';
 import IRecipe from '../@types/recipe';
 import { Route, Routes } from 'react-router-dom';
 import RecipePage from './RecipePage/RecipePage';
+import myAxiosInstance from '../axios/axios';
 
 function App() {
 	// STATE qui stocke les recettes : au debut un tableau vide et après le fetch on a les recettes
@@ -18,9 +17,8 @@ function App() {
 	useEffect(() => {
 		const fetchRecipes = async () => {
 			try {
-				const response = await axios.get(
-					'https://orecipesapi.onrender.com/api/recipes',
-				);
+				// ici on utilise l'instance axios qui a la base url de paramétrée
+				const response = await myAxiosInstance.get('/recipes');
 				console.log(response.data);
 				// on a recup les données de l'API on va les mettre dans le state
 				setRecipes(response.data);

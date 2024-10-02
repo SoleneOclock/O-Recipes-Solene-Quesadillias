@@ -1,10 +1,10 @@
-import axios from 'axios';
 import logo from '../../assets/logo.png';
 import './Header.scss';
 
 // import des composant pré stylés de semantic
 import { Input, Button, Form, FormGroup } from 'semantic-ui-react';
 import { useState } from 'react';
+import myAxiosInstance from '../../axios/axios';
 
 export default function Header() {
 	// STATE pour stocker le pseudo
@@ -16,8 +16,8 @@ export default function Header() {
 	// fonction qui envoie au back l'email et le password et recup la response et affiche un message en fonction
 	const checkCredentials = async (email: string, pass: string) => {
 		try {
-			const response = await axios.post(
-				'https://orecipesapi.onrender.com/api/login/',
+			const response = await myAxiosInstance.post(
+				'/login/',
 				// on envoie au back les données du formulaire
 				{
 					email: email,
