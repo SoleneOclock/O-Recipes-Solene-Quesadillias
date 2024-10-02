@@ -1,24 +1,26 @@
+import IRecipe from '../../@types/recipe';
 import './HomePage.scss';
-import { Card, CardGroup } from 'semantic-ui-react';
+import { Card, CardGroup, Button } from 'semantic-ui-react';
 
-export default function HomePage() {
+interface IHomePageProps {
+	recipes: IRecipe[];
+}
+
+export default function HomePage({ recipes }: IHomePageProps) {
 	return (
 		<main className="Main">
 			<h1 className="Main-title">Les recettes O Recipes</h1>
 			<p>Voici nos recettes</p>
 			<CardGroup itemsPerRow={2}>
-				<Card
-					image="https://lorempokemon.fakerapi.it/pokemon/200"
-					header="Cupcake"
-					meta="Friend"
-					description="Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat."
-				/>
-				<Card
-					image="https://lorempokemon.fakerapi.it/pokemon/200"
-					header="Tarte"
-					meta="Friend"
-					description="Elliot is a sound engineer living in Nashville who enjoys playing guitar and hanging with his cat."
-				/>
+				{recipes.map((recipe) => (
+					<Card
+						key={recipe.id}
+						image={recipe.thumbnail}
+						header={recipe.title}
+						meta={`Difficulty: ${recipe.difficulty}`}
+						description={<Button>Voir la recette</Button>}
+					/>
+				))}
 			</CardGroup>
 		</main>
 	);
