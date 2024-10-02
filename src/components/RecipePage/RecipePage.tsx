@@ -20,6 +20,8 @@ export default function RecipePage({ recipes }: IRecipePageProps) {
 	// - soit on recup la listed es recettes en props depuis app et on find celle qu'on veut
 	const [recipeToDisplay, setRecipeToDisplay] = useState<null | IRecipe>(null);
 
+	const [error, setError] = useState<null | string>(null);
+
 	useEffect(() => {
 		const fetchRecipeFromSlug = async () => {
 			try {
@@ -29,12 +31,20 @@ export default function RecipePage({ recipes }: IRecipePageProps) {
 				console.log(response);
 				// on place la recette reçue dans le state pour l'afficher
 				setRecipeToDisplay(response.data);
+
+				// on vire la potentielle erreur du state car là on a bien une recette
+				setError(null);
 			} catch (e) {
 				console.log(e);
+				setError("la recette n'existe pas");
 			}
 		};
 		fetchRecipeFromSlug();
 	}, [slug]);
+
+	if (error) {
+		return <div>La recette n'existe pas</div>;
+	}
 
 	if (!recipeToDisplay) {
 		return <div>...</div>;
@@ -57,7 +67,9 @@ export default function RecipePage({ recipes }: IRecipePageProps) {
 			<ul className="ingredients">
 				{recipeToDisplay.ingredients.map((ingredient) => (
 					<li key={ingredient.id} className="ingredients__item">
-						<span className="ingredients__quantity">{ingredient.quantity}</span>
+						<span className="ingredients__quantity">
+							{ingredient.quantity} {ingredient.unit}
+						</span>
 						{ingredient.name}
 					</li>
 				))}
