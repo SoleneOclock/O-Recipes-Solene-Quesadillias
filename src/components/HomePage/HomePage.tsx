@@ -10,7 +10,7 @@ interface IHomePageProps {
 export default function HomePage({ recipes }: IHomePageProps) {
 	return (
 		<main className="Main">
-			<h1 className="Main-title">Les recettes O Recipes de Soso !!!</h1>
+			<h1 className="Main-title">Les recettes O Recipes de Soso ohohoh !!!</h1>
 			<p>Voici nos recettes</p>
 			<CardGroup itemsPerRow={2}>
 				{recipes.map((recipe) => (
