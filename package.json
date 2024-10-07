@@ -1,29 +1,29 @@
 {
-  "name": "s16e02-orecipes-soleneoclock",
-  "private": true,
-  "version": "0.0.0",
-  "type": "module",
-  "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview"
-  },
-  "dependencies": {
-    "axios": "^1.7.7",
-    "react": "^18.3.1",
-    "react-dom": "^18.3.1",
-    "react-router-dom": "^6.26.2",
-    "sass": "^1.79.4",
-    "semantic-ui-css": "^2.5.0",
-    "semantic-ui-react": "^2.1.5"
-  },
-  "devDependencies": {
-    "@biomejs/biome": "1.9.3",
-    "@types/react": "^18.3.3",
-    "@types/react-dom": "^18.3.0",
-    "@vitejs/plugin-react": "^4.3.1",
-    "globals": "^15.9.0",
-    "typescript": "^5.5.3",
-    "vite": "^5.4.1"
-  }
+	"name": "s16e02-orecipes-soleneoclock",
+	"private": true,
+	"version": "0.0.0",
+	"type": "module",
+	"scripts": {
+		"dev": "vite",
+		"build": "tsc -b && vite build",
+		"preview": "vite preview"
+	},
+	"dependencies": {
+		"axios": "^1.7.7",
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1",
+		"react-router-dom": "^6.26.2",
+		"sass": "^1.79.4",
+		"semantic-ui-css": "^2.5.0",
+		"semantic-ui-react": "^2.1.5"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "1.9.3",
+		"@types/react": "^18.3.3",
+		"@types/react-dom": "^18.3.0",
+		"@vitejs/plugin-react": "^4.3.1",
+		"globals": "^15.9.0",
+		"typescript": "^5.5.3",
+		"vite": "^5.4.1"
+	}
 }

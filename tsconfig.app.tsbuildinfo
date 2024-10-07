@@ -1,0 +1,1 @@
+{"root":["./src/main.tsx","./src/vite-env.d.ts","./src/@types/recipe.d.ts","./src/axios/axios.ts","./src/components/app.tsx","./src/components/header/header.tsx","./src/components/homepage/favoritespage.tsx","./src/components/homepage/homepage.tsx","./src/components/nav/nav.tsx","./src/components/recipepage/recipepage.tsx","./src/localstorage/localstorage.ts"],"version":"5.6.2"}

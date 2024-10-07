@@ -10,7 +10,7 @@ interface IHomePageProps {
 export default function HomePage({ recipes }: IHomePageProps) {
 	return (
 		<main className="Main">
-			<h1 className="Main-title">Les recettes O Recipes</h1>
+			<h1 className="Main-title">Les recettes O Recipes de Soso !!!</h1>
 			<p>Voici nos recettes</p>
 			<CardGroup itemsPerRow={2}>
 				{recipes.map((recipe) => (
@@ -30,3 +30,16 @@ export default function HomePage({ recipes }: IHomePageProps) {
 		</main>
 	);
 }
+
+/*
+- build le code
+- lancer les tests : si ils passent pas on s'arrete la on corrige les bugs
+- se connecter sur le serveur
+	- installer les bons outils (node, php, sgbd) avec les bonnes version (ou lancer un docker)
+- copier les fichiers du bundle sur le serveur
+- lancer le serveur
+
+-> pour automatiser tout on peut mettre en place un script qui fait tout ça pour nous 
+ci/cd
+-> on peut utiliser github ou gitlab pour executer les jobs de notre ci 
+*/

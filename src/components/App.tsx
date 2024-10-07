@@ -43,10 +43,7 @@ function App() {
 
 				<Routes>
 					<Route path="/" element={<HomePage recipes={recipes} />} />
-					<Route
-						path="/recipe/:slug"
-						element={<RecipePage recipes={recipes} />}
-					/>
+					<Route path="/recipe/:slug" element={<RecipePage />} />
 					{isLogged && <Route path="/favorites" element={<FavoritesPage />} />}
 					<Route path="*" element={<p>404</p>} />
 				</Routes>

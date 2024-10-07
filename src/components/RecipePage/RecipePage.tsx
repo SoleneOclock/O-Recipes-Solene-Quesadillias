@@ -2,18 +2,12 @@ import { useParams } from 'react-router-dom';
 import IRecipe from '../../@types/recipe';
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-
 import './RecipePage.scss';
 
-interface IRecipePageProps {
-	recipes: IRecipe[];
-}
-
-export default function RecipePage({ recipes }: IRecipePageProps) {
+export default function RecipePage() {
 	// recuperer le slug de l'url pour savoir quelle recette afficher
 	// on va utiliser useParams pour recuperer le slug de l'url
 	const { slug } = useParams();
-	console.log(slug);
 
 	// on a recup le slug mais on veut l'objet recette associé à ce slug
 	// - soit on fetch l'API pour recuperer la recette
