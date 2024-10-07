@@ -45,6 +45,7 @@ function App() {
 			<div className="App-right">
 				<p>on est en mode : {import.meta.env.MODE}</p>
 				<p>l'url de l'API est : {import.meta.env.VITE_BASEURL}</p>
+				<p>Le mot de passe de l'API est {import.meta.env.VITE_MOTDEPASSE}</p>
 				<Header setIsLogged={setIsLogged} />
 
 				<Routes>

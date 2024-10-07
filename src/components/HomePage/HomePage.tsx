@@ -36,6 +36,8 @@ export default function HomePage({ recipes }: IHomePageProps) {
 - lancer les tests : si ils passent pas on s'arrete la on corrige les bugs
 - se connecter sur le serveur
 	- installer les bons outils (node, php, sgbd) avec les bonnes version (ou lancer un docker)
+	- creer ta base, avec toutes tables (lance un script : fixtures)
+	- remplir ta base avec des données d'initialisation
 - copier les fichiers du bundle sur le serveur
 - lancer le serveur
 
