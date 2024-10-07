@@ -34,7 +34,7 @@ function App() {
 	}, []);
 
 	// recuperation de la variable d'environnement qui sera diffferente suivant qu'on soit en dev ou en prod
-	console.log(import.meta.env.MODE);
+	console.log(import.meta.env);
 	console.log(import.meta.env.VITE_BASEURL);
 
 	return (
@@ -46,8 +46,8 @@ function App() {
 				<p>on est en mode : {import.meta.env.MODE}</p>
 				<p>l'url de l'API est : {import.meta.env.VITE_BASEURL}</p>
 				<p>Le mot de passe de l'API est {import.meta.env.VITE_MOTDEPASSE}</p>
+				nouvelle supper fonctionnalité
 				<Header setIsLogged={setIsLogged} />
-
 				<Routes>
 					<Route path="/" element={<HomePage recipes={recipes} />} />
 					<Route path="/recipe/:slug" element={<RecipePage />} />
