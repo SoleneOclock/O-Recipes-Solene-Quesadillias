@@ -33,12 +33,18 @@ function App() {
 		fetchRecipes();
 	}, []);
 
+	// recuperation de la variable d'environnement qui sera diffferente suivant qu'on soit en dev ou en prod
+	console.log(import.meta.env.MODE);
+	console.log(import.meta.env.VITE_BASEURL);
+
 	return (
 		<div className="App">
 			<div className="App-left">
 				<Nav recipes={recipes} />
 			</div>
 			<div className="App-right">
+				<p>on est en mode : {import.meta.env.MODE}</p>
+				<p>l'url de l'API est : {import.meta.env.VITE_BASEURL}</p>
 				<Header setIsLogged={setIsLogged} />
 
 				<Routes>
